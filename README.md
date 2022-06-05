@@ -45,4 +45,8 @@ Linux: `sh gradlew build`
 
 ### Пример создания и запуска контейнера с переменными
 `docker run --rm -e GIF_APP_PORT=7000 -p 8080:7000 exchange-rate-and-gifs` 
-
+***
+## Endpoint
+#### /api/v1/gif?currency=[Код валюты](https://openexchangerates.org/api/currencies.json)
+Пример:
+`http://localhost:8080/api/v1/gif?currency=RUB`
