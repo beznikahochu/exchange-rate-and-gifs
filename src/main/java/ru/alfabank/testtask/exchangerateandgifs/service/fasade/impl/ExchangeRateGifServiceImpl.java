@@ -42,7 +42,7 @@ public class ExchangeRateGifServiceImpl implements ExchangeRateGifService {
         String yesterdayDate = formatDateFromNow(1);
         Double todayRate = getRateByDateAndCurrency(todayDate, currency);
         Double yesterdayRate = getRateByDateAndCurrency(yesterdayDate, currency);
-        String tag = (todayRate < yesterdayRate) ? "rich" : "broke";
+        String tag = (todayRate > yesterdayRate) ? "rich" : "broke";
         URI gifUri = URI.create(getGifUrlByTag(tag));
         return downloadService.downloadResourceByUrl(gifUri);
     }
